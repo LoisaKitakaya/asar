@@ -1,0 +1,71 @@
+{% extends 'admin/super.html' %}
+
+<!-- title -->
+
+{% block title %} Register {% endblock %}
+
+<!-- title -->
+
+<!-- content -->
+
+{% block content %}
+
+<br />
+<h3 class="text-center">Create new admin account</h3>
+<br />
+
+<div class="card">
+  <div class="card-body">
+    <form method="POST">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          name="username"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">Username</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+        />
+        <label for="floatingPassword">Password</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          name="confirm_password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+        />
+        <label for="floatingPassword">Confirm password</label>
+      </div>
+      <button type="submit" class="btn btn-success container-fluid">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- notifications -->
+
+<div class="notify">{% include 'notifications.html' %}</div>
+
+<!-- notifications -->
+
+<p class="text-center">
+  Already have an account? Go to
+  <a href="{{ url_for('users.login') }}"><ins>Log in</ins></a
+  >.
+</p>
+
+{% endblock %}
+
+<!-- content -->
