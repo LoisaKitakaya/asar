@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+<!-- title -->
+
+{% block title %} Home {% endblock %}
+
+<!-- title -->
+
+<!-- content -->
+
+{% block content %}
+
+<h1>World Environment Day</h1>
+
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis possimus
+  voluptatem in ratione deleniti sequi saepe quod, maiores ducimus? Unde ipsum
+  assumenda vel, aut voluptatum natus veritatis laboriosam laborum quo.
+</p>
+
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, temporibus
+  veritatis quam rerum, suscipit quo cum recusandae tempora illo facere sint
+  provident est voluptatum, corporis soluta voluptates. Ipsum, est dolorum.
+</p>
+
+<p>
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, inventore
+  obcaecati? Deleniti natus, excepturi iste eum voluptate, tempore eius
+  consequuntur ut impedit id facilis blanditiis quasi quos odit autem aliquam.
+</p>
+
+<hr class="my-4" />
+
+{% if images %}
+<!--  -->
+<div class="d-flex justify-content-center align-items-center flex-wrap">
+  {% for image in images %}
+  <!--  -->
+  <img
+    src="{{ image.image_url }}"
+    alt="Image {{ image.id }}"
+    height="300"
+    width="300"
+    class="mx-2 mb-3 img-fluid img-thumbnail rounded"
+    id="display-img"
+  />
+  <!--  -->
+  {% endfor %}
+</div>
+<!--  -->
+
+{% endif %}
+<!--  -->
+
+{% endblock %}
+
+<!-- content -->

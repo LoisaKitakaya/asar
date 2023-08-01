@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+<!-- title -->
+
+{% block title %} Selfie {% endblock %}
+
+<!-- title -->
+
+<!-- content -->
+
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center flex-column">
+  <br />
+  <div id="video-container">
+    <video
+      id="video"
+      width="640"
+      height="480"
+      class="img-fluid img-thumbnail rounded"
+      autoplay
+    ></video>
+    <img
+      id="watermark"
+      src="{{ url_for('static', filename='logo/logo.png') }}"
+      alt="Watermark"
+    />
+  </div>
+  <br />
+  <button id="capture-btn" type="button" class="btn btn-lg btn-primary">
+    <i class="bi bi-camera"></i>
+  </button>
+  <br />
+  <canvas
+    id="canvas"
+    width="640"
+    height="480"
+    class="img-fluid img-thumbnail rounded"
+    style="display: none"
+  ></canvas>
+  <br />
+</div>
+
+{% endblock %}
+
+<!-- content -->
