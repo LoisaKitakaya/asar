@@ -31,7 +31,7 @@ class AdminModelView(ModelView):
         return redirect(url_for("users.login", next=request.url))
 
 
-def create_app(config_class=Config):
+def create_app(config_class):
     app = Flask(__name__)
     app.config.from_object(config_class)
 
@@ -63,6 +63,6 @@ def create_app(config_class=Config):
 
 
 if __name__ == "__main__":
-    app = create_app()
+    app = create_app(config_class=Config)
 
     app.run(debug=True if os.getenv("MODE") == "development" else False)
