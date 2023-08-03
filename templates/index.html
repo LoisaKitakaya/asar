@@ -10,30 +10,31 @@
 
 {% block content %}
 
-<div class="backdrop pt-5">
-  <h1 class="text-center mb-5">Asar</h1>
+<div class="backdrop pt-5 col text-center">
+  <img 
+    class="text-center"
+    id="World Environment Day"
+    src="{{ url_for('static', filename='logo/asar-wed.png') }}"
+    alt="World Envrionment Day Campaign by Asar"
+  />
+  <p class="text-center mb-5 black"><strong>Help Asar create awareness this</strong></p>
+  <h1 class="text-center mb-5 color-vivid-malachite">World Environment Day!</h1>
+  <h2 class="text-center mb-5 color-red-door">7th Sept 2023</h2>
+  <p class="text-center mb-3 black text-small">Allow the app to use your camera!</p>
 
   <br />
-
-  <h4 class="text-center mb-4">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-    possimus voluptatem in ratione deleniti sequi saepe quod, maiores ducimus?
-    Unde ipsum assumenda vel, aut voluptatum natus veritatis laboriosam laborum
-    quo.
-  </h4>
-
-  <h4 class="text-center mb-4">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, temporibus
-    veritatis quam rerum, suscipit quo cum recusandae tempora illo facere sint
-    provident est voluptatum, corporis soluta voluptates. Ipsum, est dolorum.
-  </h4>
-
-  <h4 class="text-center mb-4">
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae,
-    inventore obcaecati? Deleniti natus, excepturi iste eum voluptate, tempore
-    eius consequuntur ut impedit id facilis blanditiis quasi quos odit autem
-    aliquam.
-  </h4>
+  <div class="text-center">
+    <a
+     class="btn btn-primary btn-lg bg-vivid-malachite"
+     href="{{ url_for('camera.selfie') }}"
+     role="button">
+     <div class="container-fluid">
+      <p class="text-center text-caption">Pledge Your Support By</p>
+      <h4 class="text-center"><i class="bi bi-camera-fill"></i> Taking a Selfie</h4>
+    </div>
+   </a>
+  </div>
+  
 </div>
 
 <hr class="my-4" />
@@ -46,8 +47,8 @@
   <img
     src="{{ image.image_url }}"
     alt="Image {{ image.id }}"
-    height="300"
-    width="300"
+    height="350"
+    width="280"
     class="mx-2 mb-3 img-fluid img-thumbnail rounded"
     id="display-img"
   />

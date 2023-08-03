@@ -29,36 +29,41 @@ h1,
   font-family: "Biryani", sans-serif;
   font-weight: 900;
   margin-top: 0;
-  font-size: 3.05em;
+  font-size: 2.4rem;
 }
 
 h2,
 .text-size-h2 {
-  font-size: 2.44em;
+  font-size: 2.2rem;
 }
 
 h3,
 .text-size-h3 {
-  font-size: 1.95em;
+  font-size: 1.8rem;
 }
 
 h4,
 .text-size-h4 {
-  font-size: 1.56em;
+  font-size: 1.56rem;
+  line-height: 1em;
 }
 
 h5,
 .text-size-h5 {
-  font-size: 1.25em;
+  font-size: 1.25rem;
 }
 
 .text-caption {
-  font-size: 0.8em;
+  font-size: 0.8rem;
 }
 
 small,
 .text-small {
   font-size: 0.64em;
+}
+
+.black{
+  color: black;
 }
 
 .color-primary {
@@ -135,10 +140,11 @@ small,
 }
 
 .backdrop {
-  background-image: url("https://images.pexels.com/photos/1643409/pexels-photo-1643409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100vh;
-  color: whitesmoke;
+  color:#f7f7f7;
 }
+/* background-image: url("https://images.pexels.com/photos/1643409/pexels-photo-1643409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); */
