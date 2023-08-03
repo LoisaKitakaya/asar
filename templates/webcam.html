@@ -15,8 +15,8 @@
   <div id="video-container">
     <video
       id="video"
-      width="394"
-      height="700"
+      width="394px"
+      height="700px"
       class="img-fluid img-thumbnail rounded"
       autoplay
     ></video>
@@ -33,12 +33,26 @@
   <br />
   <canvas
     id="canvas"
-    width="394"
-    height="700"
+    width="394px"
+    height="700px"
     class="img-fluid img-thumbnail rounded"
     style="display: none"
   ></canvas>
   <br />
+  <!-- Request Camera Access Manually -->
+  <button id="camera-access-btn" type="button" class="btn btn-outline-info btn-sm" style="display: none;">
+    <i class="bi bi-camera"></i> Allow Camera Access
+  </button>  
+  <!-- Preview image -->
+  <img id="preview" style="display: none;" class="img-fluid img-thumbnail rounded">
+  <br />
+  <!-- Retake and upload buttons -->
+  <button id="retake-btn" type="button" class="btn btn-lg btn-warning" style="display: none;">
+    <i class="bi bi-camera"></i> Retake
+  </button>
+  <button id="upload-btn" type="button" class="btn btn-lg btn-success" style="display: none;">
+    <i class="bi bi-upload"></i> Upload
+  </button>
 </div>
 
 {% endblock %}
