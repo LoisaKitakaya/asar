@@ -63,7 +63,7 @@ small,
 }
 
 .black{
-  color: black;
+  color: #1b1b1b;
 }
 
 .color-primary {
@@ -97,7 +97,16 @@ small,
 .bg-vivid-malachite {
   background-color: #00d424;
 }
-
+.btn-red {
+  background-color: #b00100;
+  border-color: #b00100;
+}
+.btn-red:hover {
+  background-color: #8c0606;
+  border-color: #8c0606;
+  cursor: pointer;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
 .content {
   min-height: 90vh !important;
 }
