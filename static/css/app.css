@@ -6,15 +6,14 @@ html {
 
 body {
   font-family: "Biryani", sans-serif;
-  font-weight: 300;
-  line-height: 1.65;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 p {
   font-size: 1em;
 }
 
-h1,
 h2,
 h3,
 h4,
@@ -27,9 +26,10 @@ h5 {
 h1,
 .text-size-h1 {
   font-family: "Biryani", sans-serif;
-  font-weight: 900;
+  font-weight: 800;
   margin-top: 0;
   font-size: 2.4rem;
+  line-height: 1.2em;
 }
 
 h2,
