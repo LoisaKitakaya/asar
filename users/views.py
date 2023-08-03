@@ -56,11 +56,11 @@ def login():
 
         else:
             if this_user == None:
-                flash("Such a user does not exist.", "error")
+                flash("This user does not exist.", "error")
                 return redirect(url_for("users.login"))
 
             if not check_password_hash(this_user.password, password):
-                flash("Please check you password and try again.", "error")
+                flash("Please check your password and try again.", "error")
                 return redirect(url_for("users.login"))
 
             login_user(this_user)
