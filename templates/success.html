@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+<!-- title -->
+
+{% block title %} Selfie {% endblock %}
+
+<!-- title -->
+
+<!-- content -->
+
+{% block content %}
+<!--  -->
+
+<div class="container backdrop pt-3 col text-center">
+  <img
+    class="text-center"
+    id="World Environment Day"
+    src="{{ url_for('static', filename='logo/asar-wed.png') }}"
+    alt="World Environment Day Campaign by Asar"
+  />
+  <h1 class="text-center color-vivid-malachite">Selfie Upload Success!</h1>
+  <p class="text-center black mb-3">Share the QR code or share link via social media</p>
+  <br />
+  <img
+    class="text-center mb-3"
+    id="QRCode"
+    src="{{ url_for('static', filename='logo/qr.png') }}"
+    alt="Scan this QR Code"
+  />
+  <br />
+  <br />
+  <div class="share-buttons">
+    <button class="share-button facebook">
+      <i class="bi bi-facebook"></i>
+    </button>
+    <button class="share-button twitter">
+      <i class="bi bi-twitter"></i>
+    </button>
+    <button class="share-button linkedin">
+      <i class="bi bi-linkedin"></i>
+    </button>
+    <button class="share-button pinterest">
+      <i class="bi bi-pinterest"></i>
+    </button>
+    <button class="share-button reddit">
+      <i class="bi bi-reddit"></i>
+    </button>
+    <button class="share-button whatsapp">
+      <i class="bi bi-whatsapp"></i>
+    </button>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/share.js') }}"></script>
+
+<!--  -->
+{% endblock %}
+
+<!-- content -->

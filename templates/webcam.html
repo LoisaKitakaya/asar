@@ -12,50 +12,76 @@
 
 <div class="d-flex justify-content-center align-items-center flex-column">
   <br />
-  <div id="video-container">
-    <video
-      id="video"
-      width="394px"
-      height="700px"
-      class="img-fluid img-thumbnail rounded"
-      autoplay
-    ></video>
-    <img
-      id="watermark"
-      src="{{ url_for('static', filename='logo/logo.png') }}"
-      alt="Watermark"
-    />
+  <div id="webcam-container">
+    <div id="video-container" class="view-box">
+      <video
+        id="video"
+        class="img-fluid img-thumbnail rounded"
+        autoplay
+      ></video>
+      <canvas
+        id="canvas"
+        class="img-fluid img-thumbnail rounded"
+        style="display: none"
+      ></canvas>
+      <img
+        id="watermark"
+        src="{{ url_for('static', filename='logo/asar-badge.png') }}"
+        alt="Watermark"
+      />
+    </div>
+    <br />
+    <button id="capture-btn" type="button" class="btn btn-lg bg-green w-100">
+      <i class="bi bi-camera"></i> Take a selfie!
+    </button>
+    <br />
   </div>
-  <br />
-  <button id="capture-btn" type="button" class="btn btn-lg btn-primary">
-    <i class="bi bi-camera"></i>
-  </button>
-  <br />
-  <canvas
-    id="canvas"
-    width="394px"
-    height="700px"
-    class="img-fluid img-thumbnail rounded"
-    style="display: none"
-  ></canvas>
+
   <br />
   <!-- Request Camera Access Manually -->
-  <button id="camera-access-btn" type="button" class="btn btn-outline-info btn-sm" style="display: none;">
+  <button
+    id="camera-access-btn"
+    type="button"
+    class="btn btn-outline-info btn-sm"
+    style="display: none"
+  >
     <i class="bi bi-camera"></i> Allow Camera Access
-  </button>  
-  <!-- Preview image -->
-  <img id="preview" style="display: none;" class="img-fluid img-thumbnail rounded">
-  <br />
-  <!-- Retake and upload buttons -->
-  <div class="row">
-    <button id="retake-btn" type="button" class="btn btn-lg btn-warning" style="display: none;">
-      <i class="bi bi-camera"></i> Retake
+  </button>
+
+  <div id="preview-container" style="display: none">
+    <!-- Preview image -->
+    <div class="view-box">
+      <img
+        id="preview"
+        style="display: none"
+        class="img-fluid img-thumbnail rounded"
+      />
+      <span class="loader" id="spinner"></span>
+    </div>
+    <br />
+    <!-- Retake and upload buttons -->
+    <button
+      id="retake-btn"
+      type="button"
+      class="btn btn-lg btn-warning w-100"
+      style="display: none"
+    >
+      <i class="bi bi-arrow-repeat"></i> Retake
     </button>
-    <button id="upload-btn" type="button" class="btn btn-lg btn-success" style="display: none;">
+    <br />
+    <button
+      id="upload-btn"
+      type="button"
+      class="btn btn-lg btn-success w-100"
+      style="display: none"
+    >
       <i class="bi bi-upload"></i> Upload
     </button>
+    <br />
   </div>
 </div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 {% endblock %}
 

@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+<!-- title -->
+
+{% block title %} Images {% endblock %}
+
+<!-- title -->
+
+<!-- content -->
+
+{% block content %}
+<!--  -->
+
+<div class="my-3">
+  <h4 class="text-center">All Images</h4>
+  <br />
+  {% if images %}
+  <!--  -->
+  {% for image in images %}
+  <div class="all-images">
+    {% if image.approved %}
+    <div class="approved-img mb-3 py-3 rounded">
+      <img
+        src="{{ image.image_url }}"
+        alt="Image {{ image.id }}"
+        class="mx-2 mb-3 img-fluid img-thumbnail rounded"
+        id="display-img"
+      />
+      <div class="img-btn">
+        <form action="/images/delete/{{ image.id }}/" method="POST">
+          <button
+            class="delete-btn"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-title="Delete"
+            type="submit"
+          >
+            <i class="bi bi-trash"></i>
+          </button>
+        </form>
+        <span>Approved</span>
+        <form action="/images/disapprove/{{ image.id }}/" method="POST">
+          <button
+            class="approve-btn"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-title="Disapprove"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    {% else %}
+    <div class="non-approved-img mb-3 py-3 rounded">
+      <img
+        src="{{ image.image_url }}"
+        alt="Image {{ image.id }}"
+        class="mx-2 mb-3 img-fluid img-thumbnail rounded"
+        id="display-img"
+      />
+      <div class="img-btn">
+        <form action="/images/delete/{{ image.id }}/" method="POST">
+          <button
+            class="delete-btn"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-title="Delete"
+            type="submit"
+          >
+            <i class="bi bi-trash"></i>
+          </button>
+        </form>
+        <span>Disapproved</span>
+        <form action="/images/approve/{{ image.id }}/" method="POST">
+          <button
+            class="approve-btn"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-title="Approve"
+          >
+            <i class="bi bi-check-lg"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+  <!--  -->
+  {% else %}
+  <!--  -->
+  <h2 class="mt-5 text-center">No images have been uploaded.</h2>
+  <!--  -->
+  {% endif %}
+</div>
+
+<!--  -->
+{% endblock %}
+
+<!-- content -->
