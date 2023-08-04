@@ -49,7 +49,6 @@ shareButtons.forEach((button) => {
         break;
     }
 
-    // Open a new window to share the URL
     window.open(shareUrl, "_blank");
   });
 });
