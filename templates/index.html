@@ -10,56 +10,171 @@
 
 {% block content %}
 
-<div class="container backdrop pt-5 col text-center">
-  <img 
+<div class="container backdrop pt-3 col text-center">
+  <img
     class="text-center"
     id="World Environment Day"
     src="{{ url_for('static', filename='logo/asar-wed.png') }}"
-    alt="World Envrionment Day Campaign by Asar"
+    alt="World Environment Day Campaign by Asar"
   />
-  <p class="text-center black"><b>Pledge your support for the International Day of Clean Air for blue skies, this 7th of September 2023 by </b></p>
+  <p class="text-center black">
+    <b
+      >Pledge your support for the International Day of Clean Air for blue
+      skies, this 7th of September 2023 by
+    </b>
+  </p>
   <h1 class="text-center color-vivid-malachite">Taking a Selfie!</h1>
-  <p class="text-center black mb-3">Scan the QR code (or click on the button) to take you to our page. Get in the best light to show your face, put on your brightest smile, position the camera so that the hashtag does not cover your face, point and shoot! When you're happy with what you've shot - hit send! And on the 1st of September get added to our exciting photowall of volunteers, pledgers, concerned citizens, young people and old people, working folks and retired folks as we all ask for the same thing.</p>
+  <p class="text-center black mb-3">
+    Scan the QR code (or click on the button) to take you to our page. Get in
+    the best light to show your face, put on your brightest smile, position the
+    camera so that the hashtag does not cover your face, point and shoot! When
+    you're happy with what you've shot - hit send! And on the 1st of September
+    get added to our exciting photo wall of volunteers, pledgers, concerned
+    citizens, young people and old people, working folks and retired folks as we
+    all ask for the same thing.
+  </p>
   <h2 class="text-center mb-3 color-primary">Clean Air and Blue Skies</h2>
-  <img 
+  <img
     class="text-center mb-3"
     id="QRCode"
     src="{{ url_for('static', filename='logo/qr.png') }}"
     alt="Scan this QR Code"
-    width="150px"
-    height="150px"
   />
   <div>
     <a
-     class="btn btn-red btn-lg"
-     href="{{ url_for('camera.selfie') }}"
-     role="button">
-     <div class="container-fluid mb-0">
-      <p class="text-center text-caption text-white"><b>Pledge Your Support By</b></p>
-      <h4 class="text-center text-white"><i class="bi bi-camera-fill"></i> Taking a Selfie!</h4>
-    </div>
-   </a>
+      class="btn bg-green btn-lg"
+      href="{{ url_for('camera.selfie') }}"
+      role="button"
+    >
+      <div class="container-fluid mb-0">
+        <p class="text-center text-caption text-white">
+          <b>Pledge Your Support By</b>
+        </p>
+        <h4 class="text-center text-black">
+          <i class="bi bi-camera-fill"></i> Taking a Selfie!
+        </h4>
+      </div>
+    </a>
   </div>
-  
 </div>
 
-<hr class="my-4" />
+<hr class="my-4 divider" />
 
-{% if images %}
+{% if length %}
+<!--  -->
+<p class="mb-4 text-center">
+  <span class="text-danger"
+    ><strong><ins>{{ length }}</ins></strong></span
+  >
+  people have already pledged their support.
+</p>
+<!--  -->
+{% endif %} {% if images %}
 <!--  -->
 <div class="d-flex justify-content-center align-items-center flex-wrap">
+  {% if current_user.is_authenticated %}
+  <!--  -->
   {% for image in images %}
   <!--  -->
-  <img
-    src="{{ image.image_url }}"
-    alt="Image {{ image.id }}"
-    height="350"
-    width="280"
-    class="mx-2 mb-3 img-fluid img-thumbnail rounded"
-    id="display-img"
-  />
+  {% if image.approved %}
+  <div class="mb-3">
+    <img
+      src="{{ image.image_url }}"
+      alt="Image {{ image.id }}"
+      height="350"
+      width="280"
+      class="mx-2 mb-3 img-fluid img-thumbnail rounded"
+      id="display-img"
+    />
+    <div class="img-btn">
+      <form action="/images/delete/{{ image.id }}/" method="POST">
+        <button
+          class="delete-btn"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          data-bs-title="Delete"
+          type="submit"
+        >
+          <i class="bi bi-trash"></i>
+        </button>
+      </form>
+      <span>Approved</span>
+      <form action="/images/disapprove/{{ image.id }}/" method="POST">
+        <button
+          class="approve-btn"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          data-bs-title="Disapprove"
+        >
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+  <!--  -->
+  {% else %}
+  <!--  -->
+  <div class="mb-3">
+    <img
+      src="{{ image.image_url }}"
+      alt="Image {{ image.id }}"
+      height="350"
+      width="280"
+      class="mx-2 mb-3 img-fluid img-thumbnail rounded"
+      id="display-img"
+    />
+    <div class="img-btn">
+      <form action="/images/delete/{{ image.id }}/" method="POST">
+        <button
+          class="delete-btn"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          data-bs-title="Delete"
+          type="submit"
+        >
+          <i class="bi bi-trash"></i>
+        </button>
+      </form>
+      <span>Disapproved</span>
+      <form action="/images/approve/{{ image.id }}/" method="POST">
+        <button
+          class="approve-btn"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          data-bs-title="Approve"
+        >
+          <i class="bi bi-check-lg"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+  <!--  -->
+  {% endif %}
   <!--  -->
   {% endfor %}
+  <!--  -->
+  {% else %}
+  <!--  -->
+  {% for image in images %}
+  <!--  -->
+  {% if image.approved %}
+  <div class="mb-3">
+    <img
+      src="{{ image.image_url }}"
+      alt="Image {{ image.id }}"
+      height="350"
+      width="280"
+      class="mx-2 mb-3 img-fluid img-thumbnail rounded"
+      id="display-img"
+    />
+  </div>
+  <!--  -->
+  {% endif %}
+  <!--  -->
+  {% endfor %}
+  <!--  -->
+  <!--  -->
+  {% endif %}
 </div>
 <!--  -->
 
