@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<div class="container backdrop pt-3 col text-center">
+<div class="container backdrop pt-1 col text-center">
   <img
     class="text-center"
     id="World Environment Day"
@@ -23,23 +23,53 @@
       skies, this 7th of September 2023 by
     </b>
   </p>
-  <h1 class="text-center color-vivid-malachite">Taking a Selfie!</h1>
-  <p class="text-center black mb-3">
-    Scan the QR code (or click on the button) to take you to our page. Get in
-    the best light to show your face, put on your brightest smile, position the
-    camera so that the hashtag does not cover your face, point and shoot! When
-    you're happy with what you've shot - hit send! And on the 1st of September
-    get added to our exciting photo wall of volunteers, pledgers, concerned
-    citizens, young people and old people, working folks and retired folks as we
-    all ask for the same thing.
+  <h2 class="text-center mb-3 color-primary">#CleanAirForBlueSkies</h2>
+  <p class="text-center black">
+    <span class="mb-1 text-center fw-bold">Creating A Breathable Tomorrow</span>
+    <br />
+    As we approach the 7th of September, a significant day on the global
+    calendar, we're reminded of the paramount importance of clean air and clear
+    blue skies. The International Day for Clean Air & Blue Skies serves as a
+    compelling call to action, urging us all to unite for a healthier, more
+    sustainable world. The air we breathe knows no borders, and its quality
+    impacts every living being on this planet. This day prompts us to reflect on
+    the choices we make daily and the collective impact they have on the
+    environment. It's a moment to envision a future where the sky is a canvas of
+    vibrant blue, where clean air revitalizes our lungs, and where generations
+    to come can revel in the beauty of unspoiled horizons.
   </p>
-  <h2 class="text-center mb-3 color-primary">Clean Air and Blue Skies</h2>
-  <img
-    class="text-center mb-3"
-    id="QRCode"
-    src="{{ url_for('static', filename='logo/qr.png') }}"
-    alt="Scan this QR Code"
-  />
+  <p class="text-center black">
+    <span class="mb-1 text-center fw-bold">Joining Forces For Change</span>
+    <br />
+    This year's International Day for Clean Air & Blue Skies presents a unique
+    opportunity to join a global movement for positive change. Our individual
+    efforts, when multiplied, can lead to tangible transformations. Governments,
+    organizations, communities, and individuals are coming together to pledge
+    their commitment to reducing air pollution, conserving natural resources,
+    and embracing sustainable practices. From planting trees to advocating for
+    cleaner energy sources, from supporting policies that safeguard the
+    environment to promoting public transportation, our actions can pave the way
+    for a greener and cleaner world. On this day, let's amplify our voices,
+    share our stories, and inspire one another to take bold steps towards
+    ensuring that the air we breathe is pure and the skies above us are crystal
+    clear.
+  </p>
+  <p class="text-center black">
+    <span class="mb-1 text-center fw-bold"
+      >A Call To Breathe Life Into Change</span
+    >
+    <br />
+    As we mark the International Day for Clean Air & Blue Skies on September
+    7th, let's remember that this isn't just a celebration; it's a call to
+    action. It's a reminder that every action we take, whether big or small,
+    contributes to the overall health of our planet. The time to act is now.
+    Let's use this day as a catalyst for creating awareness, fostering
+    innovation, and advocating for policies that safeguard our environment.
+    Together, we can make clean air and blue skies a reality for everyone,
+    regardless of where they live or who they are. Join us in this global
+    movement to breathe life into change and leave a legacy of cleaner air and
+    bluer skies for generations to come.
+  </p>
   <div>
     <a
       class="btn bg-green btn-lg"
@@ -69,91 +99,11 @@
   people have already pledged their support.
 </p>
 <!--  -->
-{% endif %} {% if images %}
+{% endif %}
+<!--  -->
+{% if images %}
 <!--  -->
 <div class="d-flex justify-content-center align-items-center flex-wrap">
-  {% if current_user.is_authenticated %}
-  <!--  -->
-  {% for image in images %}
-  <!--  -->
-  {% if image.approved %}
-  <div class="mb-3">
-    <img
-      src="{{ image.image_url }}"
-      alt="Image {{ image.id }}"
-      height="350"
-      width="280"
-      class="mx-2 mb-3 img-fluid img-thumbnail rounded"
-      id="display-img"
-    />
-    <div class="img-btn">
-      <form action="/images/delete/{{ image.id }}/" method="POST">
-        <button
-          class="delete-btn"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          data-bs-title="Delete"
-          type="submit"
-        >
-          <i class="bi bi-trash"></i>
-        </button>
-      </form>
-      <span>Approved</span>
-      <form action="/images/disapprove/{{ image.id }}/" method="POST">
-        <button
-          class="approve-btn"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          data-bs-title="Disapprove"
-        >
-          <i class="bi bi-x-lg"></i>
-        </button>
-      </form>
-    </div>
-  </div>
-  <!--  -->
-  {% else %}
-  <!--  -->
-  <div class="mb-3">
-    <img
-      src="{{ image.image_url }}"
-      alt="Image {{ image.id }}"
-      height="350"
-      width="280"
-      class="mx-2 mb-3 img-fluid img-thumbnail rounded"
-      id="display-img"
-    />
-    <div class="img-btn">
-      <form action="/images/delete/{{ image.id }}/" method="POST">
-        <button
-          class="delete-btn"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          data-bs-title="Delete"
-          type="submit"
-        >
-          <i class="bi bi-trash"></i>
-        </button>
-      </form>
-      <span>Disapproved</span>
-      <form action="/images/approve/{{ image.id }}/" method="POST">
-        <button
-          class="approve-btn"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          data-bs-title="Approve"
-        >
-          <i class="bi bi-check-lg"></i>
-        </button>
-      </form>
-    </div>
-  </div>
-  <!--  -->
-  {% endif %}
-  <!--  -->
-  {% endfor %}
-  <!--  -->
-  {% else %}
   <!--  -->
   {% for image in images %}
   <!--  -->
@@ -173,8 +123,6 @@
   <!--  -->
   {% endfor %}
   <!--  -->
-  <!--  -->
-  {% endif %}
 </div>
 <!--  -->
 
