@@ -99,91 +99,11 @@
   people have already pledged their support.
 </p>
 <!--  -->
-{% endif %} {% if images %}
+{% endif %}
+<!--  -->
+{% if images %}
 <!--  -->
 <div class="d-flex justify-content-center align-items-center flex-wrap">
-  {% if current_user.is_authenticated %}
-  <!--  -->
-  {% for image in images %}
-  <!--  -->
-  {% if image.approved %}
-  <div class="mb-3">
-    <img
-      src="{{ image.image_url }}"
-      alt="Image {{ image.id }}"
-      height="350"
-      width="280"
-      class="mx-2 mb-3 img-fluid img-thumbnail rounded"
-      id="display-img"
-    />
-    <div class="img-btn">
-      <form action="/images/delete/{{ image.id }}/" method="POST">
-        <button
-          class="delete-btn"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          data-bs-title="Delete"
-          type="submit"
-        >
-          <i class="bi bi-trash"></i>
-        </button>
-      </form>
-      <span>Approved</span>
-      <form action="/images/disapprove/{{ image.id }}/" method="POST">
-        <button
-          class="approve-btn"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          data-bs-title="Disapprove"
-        >
-          <i class="bi bi-x-lg"></i>
-        </button>
-      </form>
-    </div>
-  </div>
-  <!--  -->
-  {% else %}
-  <!--  -->
-  <div class="mb-3">
-    <img
-      src="{{ image.image_url }}"
-      alt="Image {{ image.id }}"
-      height="350"
-      width="280"
-      class="mx-2 mb-3 img-fluid img-thumbnail rounded"
-      id="display-img"
-    />
-    <div class="img-btn">
-      <form action="/images/delete/{{ image.id }}/" method="POST">
-        <button
-          class="delete-btn"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          data-bs-title="Delete"
-          type="submit"
-        >
-          <i class="bi bi-trash"></i>
-        </button>
-      </form>
-      <span>Disapproved</span>
-      <form action="/images/approve/{{ image.id }}/" method="POST">
-        <button
-          class="approve-btn"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          data-bs-title="Approve"
-        >
-          <i class="bi bi-check-lg"></i>
-        </button>
-      </form>
-    </div>
-  </div>
-  <!--  -->
-  {% endif %}
-  <!--  -->
-  {% endfor %}
-  <!--  -->
-  {% else %}
   <!--  -->
   {% for image in images %}
   <!--  -->
@@ -203,8 +123,6 @@
   <!--  -->
   {% endfor %}
   <!--  -->
-  <!--  -->
-  {% endif %}
 </div>
 <!--  -->
 
