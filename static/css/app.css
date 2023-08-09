@@ -269,29 +269,33 @@ small,
 .delete-btn {
   margin-left: 0.5rem;
   background-color: #b00100;
+  border-radius: 0.3rem;
   color: #f7f7f7;
 }
 
 .approve-btn {
   margin-right: 0.5rem;
   background-color: #00d424;
+  border-radius: 0.3rem;
 }
 
 .non-approved-img {
   background-color: #c27e7e85;
+  border: 4px solid #be3f4e;
   /* opacity: 0.5; */
   width: 25%;
 }
 
 .approved-img {
   background-color: #5baa6881;
+  border: 4px solid #25d366;
   /* opacity: 0.5; */
   width: 25%;
 }
 
 .approved-img img,
 .non-approved-img img {
-  width: 95.75%;
+  width: 95%;
   margin: auto;
 }
 
