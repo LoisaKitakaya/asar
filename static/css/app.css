@@ -1,20 +1,18 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
 html {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 body {
   font-family: "Biryani", sans-serif;
   font-weight: 400;
-  line-height: 1.2;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  line-height: 1.4;
+  color: #1b1b1b;
 }
 
 p {
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 h2,
@@ -24,36 +22,52 @@ h5 {
   font-family: "Biryani", sans-serif;
   font-weight: 700;
   line-height: 1.15;
+  color: black;
 }
 
 h1,
 .text-size-h1 {
   font-family: "Biryani", sans-serif;
   font-weight: 800;
-  margin-top: 0;
-  font-size: 2.4rem;
+  color: black;
+  font-size: 2rem;
   line-height: 1.2em;
 }
 
 h2,
 .text-size-h2 {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 }
 
 h3,
 .text-size-h3 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 h4,
 .text-size-h4 {
-  font-size: 1.56rem;
+  font-size: 1.4rem;
   line-height: 1em;
 }
 
 h5,
 .text-size-h5 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) { /* Targeting screens with a maximum width of 768px */
+  h1 {
+    font-size: calc(2rem - 0.4rem); 
+  }
+  h2 {
+    font-size: calc(1.8rem - 0.4rem); 
+  }
+  h3 {
+    font-size: calc(1.6rem - 0.4rem); 
+  }
+  h4 {
+    font-size: 1.1rem;
+  }
 }
 
 .text-caption {
@@ -120,9 +134,9 @@ small,
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
-/* General page size with or without content - /templates/base.html */
+/* General page size with or without content - /templates/base.html
 .content {
-  min-height: 100vh !important;
+  padding: 10px;
 }
 
 /* This section is about the webcam and selfies - /templates/webcam.html */
@@ -146,7 +160,7 @@ small,
 
 #watermark {
   position: absolute;
-  top: 60%;
+  top: 75%;
   right: 40%;
   /* opacity: .75; */
 }
@@ -185,14 +199,10 @@ small,
   margin-top: 1rem;
 }
 
-/* Home page styling - /templates/index.html */
+/* Home page styling - /templates/index.html 
 .backdrop {
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   color: #f7f7f7;
-}
+} */
 
 .divider {
   border-color: #1e91d0;

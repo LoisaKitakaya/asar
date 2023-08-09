@@ -1,88 +1,39 @@
 {% extends 'base.html' %}
 
-<!-- title -->
-
 {% block title %} Home {% endblock %}
 
-<!-- title -->
-
-<!-- content -->
-
 {% block content %}
-
-<div class="container backdrop pt-1 col text-center">
-  <img
-    class="text-center"
-    id="World Environment Day"
-    src="{{ url_for('static', filename='logo/asar-wed.png') }}"
-    alt="World Environment Day Campaign by Asar"
-  />
-  <p class="text-center black">
-    <b
-      >Pledge your support for the International Day of Clean Air for blue
-      skies, this 7th of September 2023 by
-    </b>
-  </p>
-  <h2 class="text-center mb-3 color-primary">#CleanAirForBlueSkies</h2>
-  <p class="text-center black">
-    <span class="mb-1 text-center fw-bold">Creating A Breathable Tomorrow</span>
-    <br />
-    As we approach the 7th of September, a significant day on the global
-    calendar, we're reminded of the paramount importance of clean air and clear
-    blue skies. The International Day for Clean Air & Blue Skies serves as a
-    compelling call to action, urging us all to unite for a healthier, more
-    sustainable world. The air we breathe knows no borders, and its quality
-    impacts every living being on this planet. This day prompts us to reflect on
-    the choices we make daily and the collective impact they have on the
-    environment. It's a moment to envision a future where the sky is a canvas of
-    vibrant blue, where clean air revitalizes our lungs, and where generations
-    to come can revel in the beauty of unspoiled horizons.
-  </p>
-  <p class="text-center black">
-    <span class="mb-1 text-center fw-bold">Joining Forces For Change</span>
-    <br />
-    This year's International Day for Clean Air & Blue Skies presents a unique
-    opportunity to join a global movement for positive change. Our individual
-    efforts, when multiplied, can lead to tangible transformations. Governments,
-    organizations, communities, and individuals are coming together to pledge
-    their commitment to reducing air pollution, conserving natural resources,
-    and embracing sustainable practices. From planting trees to advocating for
-    cleaner energy sources, from supporting policies that safeguard the
-    environment to promoting public transportation, our actions can pave the way
-    for a greener and cleaner world. On this day, let's amplify our voices,
-    share our stories, and inspire one another to take bold steps towards
-    ensuring that the air we breathe is pure and the skies above us are crystal
-    clear.
-  </p>
-  <p class="text-center black">
-    <span class="mb-1 text-center fw-bold"
-      >A Call To Breathe Life Into Change</span
-    >
-    <br />
-    As we mark the International Day for Clean Air & Blue Skies on September
-    7th, let's remember that this isn't just a celebration; it's a call to
-    action. It's a reminder that every action we take, whether big or small,
-    contributes to the overall health of our planet. The time to act is now.
-    Let's use this day as a catalyst for creating awareness, fostering
-    innovation, and advocating for policies that safeguard our environment.
-    Together, we can make clean air and blue skies a reality for everyone,
-    regardless of where they live or who they are. Join us in this global
-    movement to breathe life into change and leave a legacy of cleaner air and
-    bluer skies for generations to come.
-  </p>
+<div class="col text-center mx-auto">
+  <img id="World Environment Day" src="{{ url_for('static', filename='img/hero.png') }}" alt="#CleanAirForBlueSkies by Asar" width="100%" />
+  <h1 class="p-2">The International Day of <span class="color-primary">Clean Air</span> for <span class="color-primary">Blue Skies</span></h1>
+  <h2 class="color-primary px-1 mb-4">#CleanAirForBlueSkies</h2>
+  <p class="text-center mb-3 px-1">Did you know?</p>
+  <div class="d-flex">
+    <ul class="text-start mx-auto px-4 fw-bold">
+      <li>Air pollution is India's 2nd largest problem after malnutrition.</li>
+      <li>It is a pan-India problem, with over 100 cities in India designated as Non- Attainment cities.</li>
+      <li>Air pollution accounts for an estimated 12.5% of deaths in India.</li>
+      <li>Inhaling air pollution decreases the average human lifespan by 1 to 2 years.</li>
+      <li>Beijing's air pollution has given rise to a new disease, called the Beijing cough.</li>
+    </ul>
+  </div>
+  <p class="text-center mt-3 mb-4 px-1">It's time we brought change.</p>
+  <p class="text-center mb-3 px-1 fw-bold">This <span class="color-primary">07/09/2023</span>, Join our campaign to achieve <span class="color-primary">blue</span> skies 365 days of the year.</p>
+  <div class="d-flex">
+    <ul class="text-start mx-auto px-4 fw-bold">
+      <li>Click the link below to take a selfie (Make sure you're in a bright, well lit area)</li>
+      <li>Position the camera so that the hashtag <span class="color-primary">#ISupportCleanAirForBlueSkies</span> is across your chest</li>
+      <li>Point to the hashtag and smile so we can see your 3000 watt smile!</li>
+      <li>Click the picture, approve the picture and hit send.</li>
+    </ul>
+  </div>
+  <p class="text-center m-4 px-1">From the 1st of September, your picture will join our photowall to show the number of people who pledge to work for clean air and blue skies.</p>
+  <p class="text-center mb-3 px-1 fst-italic">Spread the word, since we don't spread air pollution!</p>
   <div>
-    <a
-      class="btn bg-green btn-lg"
-      href="{{ url_for('camera.selfie') }}"
-      role="button"
-    >
+    <a class="btn bg-green btn-lg" href="{{ url_for('camera.selfie') }}" role="button">
       <div class="container-fluid mb-0">
-        <p class="text-center text-caption text-white">
-          <b>Pledge Your Support By</b>
-        </p>
-        <h4 class="text-center text-black">
-          <i class="bi bi-camera-fill"></i> Taking a Selfie!
-        </h4>
+        <p class="text-center text-caption text-white fw-bold mb-1">Pledge Your Support By</p>
+        <h4 class="text-center text-black"><i class="bi bi-camera-fill"></i> Taking a Selfie!</h4>
       </div>
     </a>
   </div>
@@ -91,44 +42,20 @@
 <hr class="my-4 divider" />
 
 {% if length %}
-<!--  -->
-<p class="mb-4 text-center">
-  <span class="text-danger"
-    ><strong><ins>{{ length }}</ins></strong></span
-  >
-  people have already pledged their support.
-</p>
-<!--  -->
+<p class="mb-4 text-center"><span class="text-danger"><strong><ins>{{ length }}</ins></strong></span> people have already pledged their support.</p>
 {% endif %}
-<!--  -->
+
 {% if images %}
-<!--  -->
-<div class="d-flex justify-content-center align-items-center flex-wrap">
-  <!--  -->
-  {% for image in images %}
-  <!--  -->
-  {% if image.approved %}
-  <div class="mb-3">
-    <img
-      src="{{ image.image_url }}"
-      alt="Image {{ image.id }}"
-      height="350"
-      width="280"
-      class="mx-2 mb-3 img-fluid img-thumbnail rounded"
-      id="display-img"
-    />
+<div class="container px-1 mx-auto mb-3">
+  <div class="row row-cols-2 row-cols-md-4 g-1">
+    {% for image in images %}
+      {% if image.approved %}
+        <div class="col">
+          <img src="{{ image.image_url }}" alt="Image {{ image.id }}" class="img-fluid img-thumbnail mx-auto" id="display-img" />
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
-  <!--  -->
-  {% endif %}
-  <!--  -->
-  {% endfor %}
-  <!--  -->
 </div>
-<!--  -->
-
 {% endif %}
-<!--  -->
-
 {% endblock %}
-
-<!-- content -->
