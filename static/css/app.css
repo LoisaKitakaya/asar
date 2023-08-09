@@ -200,8 +200,11 @@ small,
 }
 
 .all-images {
-  width: fit-content;
-  margin: auto;
+  width: 90%;
+  margin: 0 auto !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .img-btn {
@@ -232,11 +235,19 @@ small,
 .non-approved-img {
   background-color: #c27e7e85;
   /* opacity: 0.5; */
+  width: 25%;
 }
 
 .approved-img {
   background-color: #5baa6881;
   /* opacity: 0.5; */
+  width: 25%;
+}
+
+.approved-img img,
+.non-approved-img img {
+  width: 95.75%;
+  margin: auto;
 }
 
 .share-buttons {
@@ -271,4 +282,17 @@ small,
 }
 .whatsapp {
   background-color: #25d366;
+}
+
+.form-check {
+  margin-left: 0.5rem;
+}
+
+#img-action {
+  position: fixed;
+  right: 6rem;
+  bottom: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
