@@ -21,52 +21,17 @@
     <title>ASAR | {% block title %} {% endblock %}</title>
   </head>
   <body>
-    <!-- navigation 
-    <nav
-      class="navbar navbar-expand-lg bg-shiva-blue border-bottom border-dark-subtle"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{{ url_for('home.index') }}"
-          ><i class="bi bi-house-fill"></i> Home</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a
-                class="nav-link navbar-brand"
-                href="{{ url_for('camera.selfie') }}"
-                ><i class="bi bi-camera-fill"></i> Selfie</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-     navigation -->
-
     <!-- content -->
-    <div class="content container-fluid py-2">
-      {% block content %} {% endblock %}
-    </div>
+    <div class="content">{% block content %} {% endblock %}</div>
     <!-- content -->
 
     <!-- footer -->
-    <footer
-      class="container-fluid pt-3 border-top border-dark-subtle"
-    >
+    <footer class="container-fluid pt-3 border-top border-dark-subtle">
       <div class="d-flex justify-content-center align-items-center">
-        <p class="mx-1 fw-bold text-small"><i class="bi bi-c-circle"></i> 2023 - ASAR | Developed by <a href="https://dafterinc.com" target="_blank">Dafter Inc.</a></p>
+        <p class="mx-1 fw-bold text-small">
+          <i class="bi bi-c-circle"></i> 2023 - ASAR | Developed by
+          <a href="https://dafterinc.com" target="_blank">Dafter Inc.</a>
+        </p>
       </div>
     </footer>
     <!-- footer -->
